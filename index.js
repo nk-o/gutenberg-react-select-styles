@@ -80,9 +80,11 @@ module.exports = {
     },
     multiValue: function( styles ) {
         var newStyles = Object.assign( styles, {
-            padding: '2px 3px',
-            borderRadius: 4,
-            backgroundColor: '#555d66',
+            padding: '3px 4px',
+            margin: 4,
+            marginLeft: 0,
+            borderRadius: 15,
+            backgroundColor: '#ddd',
         } );
 
         return newStyles;
@@ -90,7 +92,8 @@ module.exports = {
     multiValueLabel: function( styles ) {
         var newStyles = Object.assign( styles, {
             padding: 0,
-            color: '#fff',
+            color: '#32373c',
+            fontSize: '90%',
         } );
 
         return newStyles;
@@ -99,10 +102,20 @@ module.exports = {
         var newStyles = Object.assign( styles, {
             padding: 0,
             marginLeft: 5,
-            color: '#adadad',
+            marginTop: 1,
+            width: 16,
+            height: 16,
+            borderRadius: 8,
+            backgroundColor: '#555d66',
+            color: '#ddd',
+            justifyContent: 'center',
+            ':hover': {
+                backgroundColor: '#e02e2e',
+                color: '#fff',
+            },
             svg: {
-                width: 10,
-                height: 10,
+                width: 12,
+                height: 12,
             },
         } );
 
