@@ -1,43 +1,59 @@
 module.exports = {
-    control: function( styles, state ) {
-        var newStyles = Object.assign( styles, {
+    control: (styles, state) => {
+        let newStyles = Object.assign(styles, {
             cursor: 'pointer',
-            minHeight: 30,
-        } );
+            minHeight: 40,
+            borderRadius: 3,
+        });
 
-        if ( state.isFocused && ! state.isDisabled ) {
-            newStyles = Object.assign( newStyles, {
+        if (state.isFocused && !state.isDisabled) {
+            newStyles = Object.assign(newStyles, {
                 borderColor: '#007cba',
-            } );
+            });
         } else {
-            newStyles = Object.assign( newStyles, {
-                borderColor: '#7e8993',
+            newStyles = Object.assign(newStyles, {
+                borderColor: 'var(--wp-components-color-gray-600, #949494)',
                 '&:hover': {
-                    borderColor: '#7e8993',
+                    borderColor: '',
                 },
-            } );
+            });
         }
 
-        if ( state.isFocused ) {
-            newStyles = Object.assign( newStyles, {
+        if (state.isFocused) {
+            newStyles = Object.assign(newStyles, {
                 boxShadow: '0 0 0 1px #007cba',
                 '&:hover': {
                     borderColor: '#007cba',
                 },
-            } );
+            });
         }
 
         return newStyles;
     },
-    valueContainer: function( styles ) {
-        var newStyles = Object.assign( styles, {
-            padding: '0 8px',
-        } );
+    singleValue: (styles) => {
+        const newStyles = Object.assign(styles, {
+            color: 'var(--wp-components-color-foreground, #1e1e1e)',
+        });
 
         return newStyles;
     },
-    input: function( styles ) {
-        var newStyles = Object.assign( styles, {
+    valueContainer: (styles, state) => {
+        let newStyles = Object.assign(styles, {
+            padding: 0,
+            paddingLeft: 10,
+        });
+
+        if (state.isMulti) {
+            newStyles = Object.assign(newStyles, {
+                paddingRight: 7,
+                paddingLeft: 7,
+            });
+        }
+
+        return newStyles;
+    },
+    input: (styles) => {
+        const newStyles = Object.assign(styles, {
             margin: 0,
             height: 30,
             paddingTop: 0,
@@ -45,107 +61,112 @@ module.exports = {
             input: {
                 boxShadow: 'none !important',
             },
-        } );
+        });
 
         return newStyles;
     },
-    dropdownIndicator: function( styles ) {
-        var newStyles = Object.assign( styles, {
-            padding: 5,
-            color: '#555555',
+    dropdownIndicator: (styles) => {
+        const newStyles = Object.assign(styles, {
+            padding: 3,
+            paddingRight: 9,
+            color: 'var(--wp-components-color-foreground, #1e1e1e)',
             '&:hover': {
-                color: '#555555',
-            },
-            svg: {
-                width: 17,
-                height: 17,
-            },
-        } );
-
-        return newStyles;
-    },
-    clearIndicator: function( styles ) {
-        var newStyles = Object.assign( styles, {
-            padding: 5,
-            svg: {
-                width: 15,
-                height: 15,
-            },
-        } );
-
-        return newStyles;
-    },
-    indicatorSeparator: function() {
-        return false;
-    },
-    multiValue: function( styles ) {
-        var newStyles = Object.assign( styles, {
-            padding: '3px 4px',
-            margin: 4,
-            marginLeft: 0,
-            borderRadius: 15,
-            backgroundColor: '#ddd',
-        } );
-
-        return newStyles;
-    },
-    multiValueLabel: function( styles ) {
-        var newStyles = Object.assign( styles, {
-            padding: 0,
-            color: '#32373c',
-            fontSize: '90%',
-        } );
-
-        return newStyles;
-    },
-    multiValueRemove: function( styles ) {
-        var newStyles = Object.assign( styles, {
-            padding: 0,
-            marginLeft: 5,
-            marginTop: 1,
-            width: 16,
-            height: 16,
-            borderRadius: 8,
-            backgroundColor: '#555d66',
-            color: '#ddd',
-            justifyContent: 'center',
-            ':hover': {
-                backgroundColor: '#e02e2e',
-                color: '#fff',
+                color: 'var(--wp-components-color-foreground, #1e1e1e)',
             },
             svg: {
                 width: 12,
                 height: 12,
             },
-        } );
+        });
 
         return newStyles;
     },
-    option: function( styles, state ) {
-        var newStyles = Object.assign( styles, {
+    clearIndicator: (styles) => {
+        const newStyles = Object.assign(styles, {
+            padding: 5,
+            svg: {
+                width: 15,
+                height: 15,
+            },
+        });
+
+        return newStyles;
+    },
+    indicatorSeparator: () => {
+        return false;
+    },
+    multiValue: (styles) => {
+        const newStyles = Object.assign(styles, {
+            padding: '3px 2px',
+            margin: 4,
+            marginLeft: 0,
+            borderRadius: 1,
+            backgroundColor: '#ddd',
+        });
+
+        return newStyles;
+    },
+    multiValueLabel: (styles) => {
+        const newStyles = Object.assign(styles, {
+            padding: 0,
+            color: '#32373c',
+            fontSize: '100%',
+        });
+
+        return newStyles;
+    },
+    multiValueRemove: (styles) => {
+        const newStyles = Object.assign(styles, {
+            padding: 0,
+            marginLeft: 5,
+            marginRight: 5,
+            marginTop: 1,
+            width: 'auto',
+            height: 'auto',
+            backgroundColor: 'transparent',
+            color: 'inherit',
+            justifyContent: 'center',
+            ':hover': {
+                backgroundColor: 'transparent',
+                color: '#e02e2e',
+            },
+            svg: {
+                width: 14,
+                height: 14,
+            },
+        });
+
+        return newStyles;
+    },
+    option: (styles, state) => {
+        let newStyles = Object.assign(styles, {
             display: 'flex',
             alignItems: 'center',
             padding: '4px 10px',
-        } );
+        });
 
-        if ( state.isFocused ) {
-            newStyles = Object.assign( newStyles, {
+        if (state.isFocused) {
+            newStyles = Object.assign(newStyles, {
                 backgroundColor: '#efefef',
-            } );
+            });
         }
 
-        if ( state.isSelected ) {
-            newStyles = Object.assign( newStyles, {
+        if (state.isSelected) {
+            newStyles = Object.assign(newStyles, {
                 backgroundColor: '#007cba',
-            } );
+            });
+        } else {
+            newStyles = Object.assign(newStyles, {
+                color: 'var(--wp-components-color-foreground, #1e1e1e)',
+            });
         }
 
         return newStyles;
     },
-    menu: function( styles ) {
-        var newStyles = Object.assign( styles, {
+    menu: (styles) => {
+        const newStyles = Object.assign(styles, {
             zIndex: 2,
-        } );
+        });
 
         return newStyles;
     },
