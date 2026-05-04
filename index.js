@@ -1,14 +1,21 @@
+/**
+ * Accent color for focus rings and selected options: follows the WordPress admin
+ * color scheme via CSS variables (see WP components / admin theme).
+ */
+const wpAccentColor =
+    'var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9))';
+
 module.exports = {
     control: (styles, state) => {
         let newStyles = Object.assign(styles, {
             cursor: 'pointer',
             minHeight: 40,
-            borderRadius: 3,
+            borderRadius: 2,
         });
 
         if (state.isFocused && !state.isDisabled) {
             newStyles = Object.assign(newStyles, {
-                borderColor: '#007cba',
+                borderColor: wpAccentColor,
             });
         } else {
             newStyles = Object.assign(newStyles, {
@@ -21,9 +28,9 @@ module.exports = {
 
         if (state.isFocused) {
             newStyles = Object.assign(newStyles, {
-                boxShadow: '0 0 0 1px #007cba',
+                boxShadow: `0 0 0 0.5px ${wpAccentColor}`,
                 '&:hover': {
-                    borderColor: '#007cba',
+                    borderColor: wpAccentColor,
                 },
             });
         }
@@ -153,7 +160,7 @@ module.exports = {
 
         if (state.isSelected) {
             newStyles = Object.assign(newStyles, {
-                backgroundColor: '#007cba',
+                backgroundColor: wpAccentColor,
             });
         } else {
             newStyles = Object.assign(newStyles, {
