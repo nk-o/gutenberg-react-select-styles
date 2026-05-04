@@ -10,7 +10,7 @@ module.exports = {
         let newStyles = Object.assign(styles, {
             cursor: 'pointer',
             minHeight: 40,
-            borderRadius: 3,
+            borderRadius: 2,
         });
 
         if (state.isFocused && !state.isDisabled) {
@@ -28,7 +28,7 @@ module.exports = {
 
         if (state.isFocused) {
             newStyles = Object.assign(newStyles, {
-                boxShadow: `0 0 0 1px ${wpAccentColor}`,
+                boxShadow: `0 0 0 0.5px ${wpAccentColor}`,
                 '&:hover': {
                     borderColor: wpAccentColor,
                 },
