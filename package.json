@@ -1,7 +1,7 @@
 {
     "name": "gutenberg-react-select-styles",
-    "version": "0.0.3",
-    "description": "Styles for react-select component",
+    "version": "0.1.0",
+    "description": "Styles for react-select aligned with WordPress admin / Gutenberg CSS variables",
     "license": "MIT",
     "author": "nK <https://nkdev.info>",
     "main": "index.js",
@@ -15,6 +15,10 @@
     "keywords": [
         "gutenberg",
         "react",
-        "select"
-    ]
+        "select",
+        "wordpress"
+    ],
+    "peerDependencies": {
+        "react-select": ">=4"
+    }
 }
