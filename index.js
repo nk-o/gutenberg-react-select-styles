@@ -3,12 +3,12 @@
  * color scheme via CSS variables (see WP components / admin theme).
  */
 const wpAccentColor =
-    'var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9))';
+    "var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9))";
 
 module.exports = {
     control: (styles, state) => {
         let newStyles = Object.assign(styles, {
-            cursor: 'pointer',
+            cursor: "pointer",
             minHeight: 40,
             borderRadius: 2,
         });
@@ -19,9 +19,9 @@ module.exports = {
             });
         } else {
             newStyles = Object.assign(newStyles, {
-                borderColor: 'var(--wp-components-color-gray-600, #949494)',
-                '&:hover': {
-                    borderColor: '',
+                borderColor: "var(--wp-components-color-gray-600, #949494)",
+                "&:hover": {
+                    borderColor: "",
                 },
             });
         }
@@ -29,7 +29,7 @@ module.exports = {
         if (state.isFocused) {
             newStyles = Object.assign(newStyles, {
                 boxShadow: `0 0 0 0.5px ${wpAccentColor}`,
-                '&:hover': {
+                "&:hover": {
                     borderColor: wpAccentColor,
                 },
             });
@@ -39,7 +39,7 @@ module.exports = {
     },
     singleValue: (styles) => {
         const newStyles = Object.assign(styles, {
-            color: 'var(--wp-components-color-foreground, #1e1e1e)',
+            color: "var(--wp-components-color-foreground, #1e1e1e)",
         });
 
         return newStyles;
@@ -79,9 +79,9 @@ module.exports = {
         const newStyles = Object.assign(styles, {
             padding: 3,
             paddingRight: 9,
-            color: 'var(--wp-components-color-foreground, #1e1e1e)',
-            '&:hover': {
-                color: 'var(--wp-components-color-foreground, #1e1e1e)',
+            color: "var(--wp-components-color-foreground, #1e1e1e)",
+            "&:hover": {
+                color: "var(--wp-components-color-foreground, #1e1e1e)",
             },
             svg: {
                 width: 12,
@@ -107,11 +107,11 @@ module.exports = {
     },
     multiValue: (styles) => {
         const newStyles = Object.assign(styles, {
-            padding: '3px 2px',
+            padding: "3px 2px",
             margin: 4,
             marginLeft: 0,
             borderRadius: 1,
-            backgroundColor: '#ddd',
+            backgroundColor: "#ddd",
         });
 
         return newStyles;
@@ -119,8 +119,8 @@ module.exports = {
     multiValueLabel: (styles) => {
         const newStyles = Object.assign(styles, {
             padding: 0,
-            color: '#32373c',
-            fontSize: '100%',
+            color: "#32373c",
+            fontSize: "100%",
         });
 
         return newStyles;
@@ -131,14 +131,14 @@ module.exports = {
             marginLeft: 5,
             marginRight: 5,
             marginTop: 1,
-            width: 'auto',
-            height: 'auto',
-            backgroundColor: 'transparent',
-            color: 'inherit',
-            justifyContent: 'center',
-            ':hover': {
-                backgroundColor: 'transparent',
-                color: '#e02e2e',
+            width: "auto",
+            height: "auto",
+            backgroundColor: "transparent",
+            color: "inherit",
+            justifyContent: "center",
+            ":hover": {
+                backgroundColor: "transparent",
+                color: "#e02e2e",
             },
             svg: {
                 width: 14,
@@ -150,14 +150,14 @@ module.exports = {
     },
     option: (styles, state) => {
         let newStyles = Object.assign(styles, {
-            display: 'flex',
-            alignItems: 'center',
-            padding: '4px 10px',
+            display: "flex",
+            alignItems: "center",
+            padding: "4px 10px",
         });
 
         if (state.isFocused) {
             newStyles = Object.assign(newStyles, {
-                backgroundColor: '#efefef',
+                backgroundColor: "#efefef",
             });
         }
 
@@ -167,7 +167,7 @@ module.exports = {
             });
         } else {
             newStyles = Object.assign(newStyles, {
-                color: 'var(--wp-components-color-foreground, #1e1e1e)',
+                color: "var(--wp-components-color-foreground, #1e1e1e)",
             });
         }
 
