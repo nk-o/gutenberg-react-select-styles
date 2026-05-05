@@ -66,7 +66,10 @@ module.exports = {
             paddingTop: 0,
             paddingBottom: 0,
             input: {
-                boxShadow: 'none !important',
+                boxShadow: "none !important",
+                minHeight: 0,
+                lineHeight: "inherit",
+                padding: 0,
             },
         });
 
